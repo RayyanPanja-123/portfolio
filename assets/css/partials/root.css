@@ -1,0 +1,166 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+:root {
+    --primary-clr: #f97316;
+    --primary-deep: #c2410c;
+    --accent-clr: #22c55e;
+    --surface-1: #fffaf4;
+    --surface-2: #fff1df;
+    --surface-3: rgba(255, 255, 255, 0.72);
+    --surface-4: rgba(255, 255, 255, 0.92);
+    --text-color: #1f2937;
+    --muted-text: #526072;
+    --border-color: rgba(194, 65, 12, 0.14);
+    --shadow-soft: 0 18px 55px rgba(159, 77, 32, 0.12);
+    --shadow-strong: 0 26px 80px rgba(120, 55, 16, 0.18);
+    --theme-transition: 250ms ease;
+}
+
+[data-theme="dark"] {
+    --primary-clr: #fb923c;
+    --primary-deep: #fdba74;
+    --accent-clr: #4ade80;
+    --surface-1: #111827;
+    --surface-2: #182235;
+    --surface-3: rgba(17, 24, 39, 0.74);
+    --surface-4: rgba(24, 34, 53, 0.92);
+    --text-color: #f8fafc;
+    --muted-text: #bcc8d8;
+    --border-color: rgba(251, 146, 60, 0.18);
+    --shadow-soft: 0 18px 55px rgba(2, 6, 23, 0.35);
+    --shadow-strong: 0 26px 80px rgba(2, 6, 23, 0.5);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    min-height: 100dvh;
+    color: var(--text-color);
+    background:
+        radial-gradient(circle at top left, rgba(249, 115, 22, 0.16), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(34, 197, 94, 0.12), transparent 22%),
+        linear-gradient(180deg, var(--surface-1) 0%, var(--surface-2) 100%);
+    overflow-x: hidden;
+    transition:
+        background var(--theme-transition),
+        color var(--theme-transition);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 96px 96px;
+    opacity: 0.32;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 88%);
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+header,
+section {
+    position: relative;
+    padding: 5.5rem 1.5rem;
+}
+
+.page-shell {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a.brand-mark,
+.cs-nav-link,
+.eyebrow {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    color: var(--text-color);
+    transition: color var(--theme-transition);
+}
+
+p,
+li,
+span {
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.text-primary {
+    color: var(--primary-clr) !important;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.88rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary-deep);
+    margin-bottom: 1rem;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 2.75rem;
+    height: 1px;
+    background: currentColor;
+}
+
+.section-intro {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    text-align: center;
+    color: var(--muted-text);
+}
+
+@media screen and (max-width: 768px) {
+    header,
+    section {
+        padding: 4.5rem 1rem;
+    }
+
+    body::before {
+        opacity: 0.18;
+        background-size: 72px 72px;
+    }
+}

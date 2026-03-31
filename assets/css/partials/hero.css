@@ -1,0 +1,147 @@
+.hero-section {
+    min-height: calc(100dvh - 5rem);
+    display: flex;
+    align-items: center;
+    padding-top: 7rem;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.8fr);
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.hero-copy h1 {
+    max-width: 11ch;
+    margin-bottom: 1.25rem;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+}
+
+.hero-lead {
+    max-width: 680px;
+    margin-bottom: 1.6rem;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: var(--muted-text);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.hero-signal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.signal-card,
+.hero-panel {
+    background: var(--surface-3);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(14px);
+    box-shadow: var(--shadow-soft);
+}
+
+.signal-card {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1rem;
+    border-radius: 1.25rem;
+}
+
+.signal-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.signal-label {
+    color: var(--muted-text);
+    line-height: 1.6;
+}
+
+.hero-panel {
+    padding: 1.25rem;
+    border-radius: 2rem;
+}
+
+.hero-panel-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 1.2rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.status-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 999px;
+    background: var(--accent-clr);
+    box-shadow: 0 0 0 0.3rem rgba(34, 197, 94, 0.14);
+}
+
+.hero-stack-card,
+.hero-proof-card {
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+    background: var(--surface-4);
+    border: 1px solid var(--border-color);
+}
+
+.hero-stack-card {
+    margin-bottom: 1rem;
+}
+
+.stack-title,
+.proof-title {
+    margin-bottom: 1rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+}
+
+.tech-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tech-cluster span {
+    padding: 0.65rem 0.85rem;
+    border-radius: 999px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-color);
+    font-weight: 700;
+}
+
+@media screen and (max-width: 992px) {
+    .hero-grid,
+    .hero-signal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy h1 {
+        max-width: 13ch;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section {
+        padding-top: 5.5rem;
+    }
+
+    .hero-copy h1 {
+        font-size: clamp(2.65rem, 15vw, 4.4rem);
+    }
+}

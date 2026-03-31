@@ -1,0 +1,138 @@
+.cs-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(1180px, calc(100% - 2rem));
+    margin: 1rem auto 0;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: rgba(255, 250, 244, 0.72);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-soft);
+    transition:
+        background-color var(--theme-transition),
+        border-color var(--theme-transition),
+        box-shadow var(--theme-transition);
+}
+
+[data-theme="dark"] .cs-navbar {
+    background: rgba(17, 24, 39, 0.8);
+}
+
+#navToggleBtn {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1.35rem;
+}
+
+.cs-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-mark {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.cs-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.cs-nav-link {
+    position: relative;
+    font-size: 0.94rem;
+    font-weight: 700;
+    color: var(--muted-text);
+}
+
+.cs-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--primary-clr), var(--accent-clr));
+    transition: transform var(--theme-transition);
+}
+
+.cs-nav-link:hover,
+.cs-nav-link.active {
+    color: var(--text-color);
+}
+
+.cs-nav-link:hover::after,
+.cs-nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.theme-change-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 2.85rem;
+    height: 2.85rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--surface-4);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.theme-change-btn:hover {
+    color: var(--primary-clr);
+}
+
+@media screen and (max-width: 768px) {
+    .cs-navbar {
+        width: calc(100% - 1rem);
+        margin-top: 0.5rem;
+        padding: 0.95rem 1rem;
+        border-radius: 1.5rem;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    #navToggleBtn {
+        display: block;
+    }
+
+    .cs-nav-brand {
+        justify-content: space-between;
+    }
+
+    .cs-nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 1rem;
+        gap: 0.85rem;
+    }
+
+    .cs-nav-links.collapsed {
+        display: none;
+    }
+
+    .cs-nav-link,
+    .theme-change-btn {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .theme-change-btn {
+        width: 100%;
+        border-radius: 0.9rem;
+    }
+}

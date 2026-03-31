@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayyan Panja | Senior Full-Stack Laravel Vue Developer</title>
+
+    <meta name="description"
+        content="Portfolio of Rayyan Panja, a senior full-stack Laravel and Vue developer building scalable SaaS products, APIs, dashboards, and multi-tenant platforms.">
+    <meta name="keywords"
+        content="senior fullstack developer, laravel developer, vue developer, php, javascript, saas, api development, portfolio, rayyan panja">
+    <meta name="author" content="Rayyan Panja">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap">
+
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="cs-navbar">
+        <div class="cs-nav-brand">
+            <a href="#home" class="brand-mark">&lt;RP /&gt;</a>
+            <button id="navToggleBtn" class="btn btn-sm btn-outline-primary" onclick="toggleNavbar()"
+                aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+        <div class="cs-nav-links collapsed">
+            <a href="#home" class="cs-nav-link active">Home</a>
+            <a href="#about" class="cs-nav-link">About</a>
+            <a href="#expertise" class="cs-nav-link">Expertise</a>
+            <a href="#projects" class="cs-nav-link">Projects</a>
+            <a href="#contact" class="cs-nav-link">Contact</a>
+            <button id="themeChangeBtn" class="theme-change-btn" onclick="changeTheme()" aria-label="Toggle theme">
+                <i id="themeIcon" class="bi bi-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="page-shell hero-grid">
+            <div class="hero-copy animate" data-animation="fade-in">
+                <p class="eyebrow">Senior Full-Stack Laravel Vue Developer</p>
+                <h1>Building revenue-critical products with Laravel, Vue, and disciplined backend architecture.</h1>
+                <p class="hero-lead">
+                    I help companies ship SaaS platforms, internal tools, customer portals, and API-driven products
+                    that stay maintainable as teams, traffic, and complexity grow.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="primary-cta">View Projects</a>
+                    <a href="#contact" class="secondary-cta">Discuss a Build</a>
+                </div>
+
+                <div class="hero-signal-grid">
+                    <div class="signal-card">
+                        <span class="signal-value">4+ yrs</span>
+                        <span class="signal-label">Shipping full-stack web products</span>
+                    </div>
+                    <div class="signal-card">
+                        <span class="signal-value">Laravel + Vue</span>
+                        <span class="signal-label">End-to-end product delivery</span>
+                    </div>
+                    <div class="signal-card">
+                        <span class="signal-value">SaaS Focus</span>
+                        <span class="signal-label">Multi-tenant, billing, dashboards, APIs</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-panel animate" data-animation="fade-in">
+                <div class="hero-panel-top">
+                    <span class="status-dot"></span>
+                    <span>Currently available for senior product engineering and contract builds</span>
+                </div>
+                <div class="hero-stack-card">
+                    <p class="stack-title">Core Stack</p>
+                    <div class="tech-cluster">
+                        <span>Laravel</span>
+                        <span>Vue.js</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>REST APIs</span>
+                        <span>Stripe</span>
+                        <span>Redis</span>
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+                <div class="hero-proof-card">
+                    <p class="proof-title">What I usually own</p>
+                    <ul class="proof-list">
+                        <li>Backend architecture, modules, and service boundaries</li>
+                        <li>Vue dashboards, workflows, and admin UX</li>
+                        <li>API design, integrations, queues, and automations</li>
+                        <li>Performance tuning, schema strategy, and deployment readiness</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="page-shell">
+            <h2 class="section-title">About</h2>
+            <div class="content-grid">
+                <article class="story-card animate" data-animation="fade-in">
+                    <p class="eyebrow">Profile</p>
+                    <h3>I work best where product velocity and code quality both matter.</h3>
+                    <p>
+                        I'm a senior full-stack developer focused on Laravel and Vue ecosystems. My work typically sits
+                        at the intersection of product engineering and business operations: building clean admin
+                        experiences, reliable APIs, subscription systems, reporting workflows, and multi-tenant SaaS
+                        features that teams can keep extending.
+                    </p>
+                    <p>
+                        I care about pragmatic architecture. That means readable code, clear domain boundaries,
+                        sensible database design, and frontend interfaces that reduce friction instead of adding it. I
+                        aim to make products faster to ship now and easier to maintain later.
+                    </p>
+                </article>
+
+                <aside class="impact-card animate" data-animation="fade-in">
+                    <p class="eyebrow">Highlights</p>
+                    <div class="impact-list">
+                        <div>
+                            <strong>Product-minded delivery</strong>
+                            <span>From planning and schema design to polished UI and integrations.</span>
+                        </div>
+                        <div>
+                            <strong>Backend depth</strong>
+                            <span>Laravel services, queues, events, policies, payments, and API architecture.</span>
+                        </div>
+                        <div>
+                            <strong>Frontend execution</strong>
+                            <span>Vue interfaces that make complex workflows feel clear and fast.</span>
+                        </div>
+                        <div>
+                            <strong>Business systems</strong>
+                            <span>CRM flows, billing, analytics, user roles, and operational dashboards.</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise">
+        <div class="page-shell">
+            <h2 class="section-title">Expertise</h2>
+            <div class="expertise-grid">
+                <article class="expertise-card animate" data-animation="fade-in">
+                    <div class="card-icon"><i class="bi bi-diagram-3"></i></div>
+                    <h3>Backend Architecture</h3>
+                    <p>Laravel applications structured for growth, with service classes, queues, jobs, events,
+                        permissions, and maintainable domain logic.</p>
+                </article>
+                <article class="expertise-card animate" data-animation="fade-in">
+                    <div class="card-icon"><i class="bi bi-window-sidebar"></i></div>
+                    <h3>Vue Product Interfaces</h3>
+                    <p>Dashboards, admin panels, and workflow-heavy screens that turn complex business actions into
+                        usable interfaces.</p>
+                </article>
+                <article class="expertise-card animate" data-animation="fade-in">
+                    <div class="card-icon"><i class="bi bi-building-check"></i></div>
+                    <h3>Multi-Tenant SaaS</h3>
+                    <p>Tenant-aware auth, account separation, plans, onboarding, roles, and subscription features
+                        designed around real operational constraints.</p>
+                </article>
+                <article class="expertise-card animate" data-animation="fade-in">
+                    <div class="card-icon"><i class="bi bi-plug"></i></div>
+                    <h3>Integrations and APIs</h3>
+                    <p>RESTful APIs, third-party integrations, webhooks, payment flows, and asynchronous jobs for
+                        connected business systems.</p>
+                </article>
+            </div>
+
+            <div class="skills-panel animate" data-animation="fade-in">
+                <p class="eyebrow">Stack and Tools</p>
+                <div class="skills-wrap">
+                    <span class="skill-pill"><i class="bi bi-filetype-php"></i> Laravel</span>
+                    <span class="skill-pill"><i class="bi bi-filetype-js"></i> Vue.js</span>
+                    <span class="skill-pill"><i class="bi bi-database"></i> MySQL</span>
+                    <span class="skill-pill"><i class="bi bi-lightning-charge"></i> Redis</span>
+                    <span class="skill-pill"><i class="bi bi-code-square"></i> REST APIs</span>
+                    <span class="skill-pill"><i class="bi bi-credit-card"></i> Stripe</span>
+                    <span class="skill-pill"><i class="bi bi-git"></i> Git</span>
+                    <span class="skill-pill"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+                    <span class="skill-pill"><i class="bi bi-shield-lock"></i> Auth and Roles</span>
+                    <span class="skill-pill"><i class="bi bi-bar-chart"></i> Reporting Systems</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="page-shell">
+            <h2 class="section-title">Selected Work</h2>
+            <p class="section-intro">
+                Examples of the kinds of products and systems I build. These are representative portfolio case studies
+                structured around business outcomes and technical ownership.
+            </p>
+
+            <div class="project-grid">
+                <article class="project-card animate" data-animation="fade-in">
+                    <div class="project-meta">SaaS Platform</div>
+                    <h3>Multi-tenant operations suite for service businesses</h3>
+                    <p>
+                        Built a Laravel and Vue platform for account management, team roles, customer records, task
+                        workflows, recurring billing, and client reporting across multiple tenant workspaces.
+                    </p>
+                    <ul class="project-points">
+                        <li>Designed tenant-aware data structure and permissions model</li>
+                        <li>Implemented Vue dashboards for daily operations and reporting</li>
+                        <li>Integrated Stripe subscriptions, invoices, and plan logic</li>
+                    </ul>
+                </article>
+
+                <article class="project-card animate" data-animation="fade-in">
+                    <div class="project-meta">Internal Product</div>
+                    <h3>Admin and analytics portal for a fast-moving commerce team</h3>
+                    <p>
+                        Delivered an internal system that unified order operations, campaign tracking, refunds, and KPI
+                        visibility, reducing spreadsheet-driven processes and improving decision speed.
+                    </p>
+                    <ul class="project-points">
+                        <li>Created modular Laravel backend services for reporting workflows</li>
+                        <li>Built interactive Vue screens for search, filtering, and action queues</li>
+                        <li>Optimized queries and indexes for high-volume transactional data</li>
+                    </ul>
+                </article>
+
+                <article class="project-card animate" data-animation="fade-in">
+                    <div class="project-meta">API Product</div>
+                    <h3>Custom API layer and partner integrations for business automation</h3>
+                    <p>
+                        Developed a secure API-first backend connecting third-party systems, webhooks, scheduled jobs,
+                        and approval workflows to support operational automation across teams.
+                    </p>
+                    <ul class="project-points">
+                        <li>Designed clean REST endpoints, auth flows, and integration contracts</li>
+                        <li>Handled async processing with queues, retries, and notifications</li>
+                        <li>Improved reliability around edge cases, observability, and failure recovery</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="page-shell">
+            <div class="contact-panel animate" data-animation="fade-in">
+                <p class="eyebrow">Contact</p>
+                <h2>Need a senior Laravel and Vue developer who can own product work end to end?</h2>
+                <p>
+                    I'm available for full-time roles, contract product development, and backend-heavy full-stack work.
+                    If you're building a SaaS app, modernizing an internal tool, or need stronger architecture around
+                    an existing Laravel codebase, let's talk.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:rayyan.panja.work@gmail.com">rayyan.panja.work@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/rayyan-panja-608757251/" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a href="https://github.com/RayyanPanja" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/functions.js"></script>
+    <script src="./assets/js/observers.js"></script>
+</body>
+
+</html>
