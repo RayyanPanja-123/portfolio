@@ -194,6 +194,15 @@
     text-transform: uppercase;
 }
 
+.project-nda {
+    margin-left: 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    opacity: 0.65;
+}
+
 .project-points li,
 .proof-list li {
     position: relative;
@@ -269,4 +278,12 @@
     .project-card {
         padding: 1.4rem;
     }
+}
+
+footer {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-clr);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted-text);
 }
