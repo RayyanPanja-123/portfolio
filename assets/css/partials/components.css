@@ -229,7 +229,8 @@
 
 .contact-links {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin-top: 1.5rem;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .contact-links a {
@@ -578,7 +579,8 @@ footer {
 .nav-lets-talk {
     display: inline-flex;
     align-items: center;
-    padding: 0.45rem 1.1rem;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
     border-radius: 999px;
     border: 1.5px solid var(--primary-clr);
     color: var(--primary-clr);
@@ -599,10 +601,8 @@ footer {
 
 @media screen and (max-width: 768px) {
     .nav-lets-talk {
-        text-align: center;
-        justify-content: center;
         border-radius: 0.9rem;
-        padding: 0.7rem 1rem;
+        padding: 0.75rem 1.25rem;
     }
 }
 
@@ -640,30 +640,32 @@ footer {
 .project-start-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    padding: 0.5rem 1.15rem;
+    gap: 0.55rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 999px;
-    background: linear-gradient(135deg, rgba(34, 197, 94, 0.18), rgba(34, 197, 94, 0.28));
-    border: 1px solid rgba(34, 197, 94, 0.35);
+    background: rgba(34, 197, 94, 0.1);
+    border: 1.5px solid rgba(34, 197, 94, 0.35);
     color: var(--accent-clr);
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     font-weight: 700;
     white-space: nowrap;
     transition:
         background-color var(--theme-transition),
+        border-color var(--theme-transition),
         transform var(--theme-transition);
 }
 
 .project-start-btn:hover {
     background: var(--accent-clr);
+    border-color: var(--accent-clr);
     color: #fff;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .contact-action-row {
     display: flex;
     justify-content: center;
-    margin-top: 1.25rem;
+    margin-top: 1rem;
 }
 
 .schedule-call-btn {
@@ -697,8 +699,8 @@ footer {
 /* ── WhatsApp floating button ──────────────────────── */
 .wa-float {
     position: fixed;
-    bottom: 1.75rem;
-    right: 1.75rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
     z-index: 9999;
     display: inline-flex;
     align-items: center;
@@ -749,8 +751,8 @@ footer {
 
 @media screen and (max-width: 768px) {
     .wa-float {
-        bottom: 1.25rem;
-        right: 1.25rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
     }
 
     .freelance-cta-row {
@@ -760,5 +762,13 @@ footer {
 
     .freelance-pill {
         text-align: center;
+    }
+
+    .project-start-btn {
+        display: none;
+    }
+
+    footer {
+        padding-bottom: 5.5rem;
     }
 }
