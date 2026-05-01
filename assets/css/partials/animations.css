@@ -2,8 +2,8 @@
     opacity: 0;
     transform: translateY(24px);
     transition:
-        opacity 700ms ease,
-        transform 700ms ease;
+        opacity 700ms ease var(--delay, 0ms),
+        transform 700ms ease var(--delay, 0ms);
 }
 
 .animate.fade-in {
