@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -23,319 +23,500 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
 
+    <!-- Apply saved theme + motion preference before first paint -->
+    <script>
+        try {
+            document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.dataset.motion = localStorage.getItem('motion') || 'full';
+        } catch (e) {}
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap">
-
-    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <nav class="cs-navbar">
-        <div class="cs-nav-brand">
-            <a href="#home" class="brand-mark">&lt;RP /&gt;</a>
-            <button id="navToggleBtn" class="btn btn-sm btn-outline-primary" aria-label="Toggle navigation"
-                aria-expanded="false">
-                <i class="bi bi-list"></i>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ===== Top bar: three floating glass pills ===== -->
+    <nav class="topbar" aria-label="Primary">
+        <a href="#home" class="glass pill pill--back">
+            <span class="pill__icon">
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+            </span>
+            <span class="pill__label">Home</span>
+        </a>
+
+        <div class="glass pill segmented">
+            <button type="button" class="segment" popovertarget="pop-section" aria-haspopup="true" aria-expanded="false">
+                <span class="segment__text">
+                    <span class="segment__label">Section</span>
+                    <span class="segment__value" id="sectionValue">Home</span>
+                </span>
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <span class="segmented__divider" aria-hidden="true"></span>
+            <button type="button" class="segment" popovertarget="pop-stack" aria-haspopup="true" aria-expanded="false">
+                <span class="segment__text">
+                    <span class="segment__label">Stack</span>
+                    <span class="segment__value" id="stackValue">Laravel · Vue</span>
+                </span>
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <span class="segmented__divider" aria-hidden="true"></span>
+            <button type="button" class="segment" popovertarget="pop-status" aria-haspopup="true" aria-expanded="false">
+                <span class="segment__text">
+                    <span class="segment__label">Status</span>
+                    <span class="segment__value">Open to work</span>
+                </span>
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </button>
         </div>
-        <div class="cs-nav-links collapsed">
-            <a href="#home" class="cs-nav-link active">Home</a>
-            <a href="#about" class="cs-nav-link">About</a>
-            <a href="#expertise" class="cs-nav-link">Expertise</a>
-            <a href="#projects" class="cs-nav-link">Projects</a>
-            <a href="#contact" class="cs-nav-link">Contact</a>
-            <a href="#contact" class="nav-lets-talk">Let's Talk</a>
-            <button id="themeChangeBtn" class="theme-change-btn" aria-label="Toggle theme">
-                <i id="themeIcon" class="bi bi-moon"></i>
-            </button>
-        </div>
+
+        <a href="#contact" class="glass pill pill--cta">
+            <span class="pill__label">Hire me</span>
+            <span class="pill__icon pill__icon--solid">
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+        </a>
     </nav>
 
-    <main>
-        <header id="home" class="hero-section">
-            <div class="page-shell hero-grid">
-                <div class="hero-copy animate" data-animation="fade-in">
+    <!-- ===== Left dock (bottom bar on mobile) ===== -->
+    <nav class="dock glass" aria-label="Quick">
+        <a href="#home" data-spy aria-label="Home">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>
+        </a>
+        <button type="button" popovertarget="pop-search" aria-label="Search projects" aria-expanded="false">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <a href="#projects" data-spy aria-label="Projects">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
+        </a>
+        <a href="#pigi" data-spy aria-label="Featured project">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-9-9a4.8 4.8 0 0 1 9-3 4.8 4.8 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg>
+        </a>
+        <a href="assets/docs/Rayyan_Panja_CV.pdf" download aria-label="Download resume">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>
+        </a>
+        <span class="dock__divider" aria-hidden="true"></span>
+        <button type="button" popovertarget="pop-settings" aria-label="Settings" aria-expanded="false">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+        </button>
+        <button type="button" id="themeToggle" aria-label="Dark mode" aria-pressed="false">
+            <svg class="i icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+            <svg class="i icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+    </nav>
+
+    <!-- ===== Dropdowns (native popovers: outside click + Esc close for free) ===== -->
+    <div id="pop-section" class="glass pop" popover>
+        <p class="pop__title">Jump to</p>
+        <ul class="pop__list">
+            <li><a href="#home" data-spy>Home</a></li>
+            <li><a href="#projects" data-spy>Projects</a></li>
+            <li><a href="#about" data-spy>About</a></li>
+            <li><a href="#expertise" data-spy>Expertise</a></li>
+            <li><a href="#skills" data-spy>Skills</a></li>
+            <li><a href="#contact" data-spy>Contact</a></li>
+        </ul>
+    </div>
+
+    <div id="pop-stack" class="glass pop" popover>
+        <p class="pop__title">Filter projects by stack</p>
+        <div class="pop__chips" id="stackOptions"><!-- filled from project tags by main.js --></div>
+    </div>
+
+    <div id="pop-status" class="glass pop pop--wide" popover>
+        <p class="status"><span class="status__dot" aria-hidden="true"></span>Available for senior product engineering</p>
+        <p class="pop__text">Available for full-time roles, contract projects, and SaaS MVPs. Let's figure out what fits.</p>
+        <ul class="pop__list">
+            <li><a href="https://calendly.com/rayyan-panja-work" target="_blank" rel="noreferrer">Schedule a Call</a></li>
+            <li><a href="mailto:rayyan.panja.work@gmail.com">Email me</a></li>
+            <li><a href="https://wa.me/919601786974" target="_blank" rel="noreferrer">Chat on WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/in/rayyan-panja-608757251/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+    </div>
+
+    <div id="pop-search" class="glass pop pop--search" popover>
+        <form class="search" role="search" id="searchForm">
+            <label class="sr-only" for="searchInput">Search projects</label>
+            <input id="searchInput" type="search" placeholder="Search projects…" autocomplete="off" autofocus>
+            <button type="submit" class="search__btn" aria-label="Show results">
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+        </form>
+    </div>
+
+    <div id="pop-settings" class="glass pop" popover>
+        <p class="pop__title">Settings</p>
+        <div class="setting">
+            <span id="themeLabel">Theme</span>
+            <div class="seg-toggle" role="group" aria-labelledby="themeLabel">
+                <button type="button" data-theme-set="light" aria-pressed="true">Light</button>
+                <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
+            </div>
+        </div>
+        <label class="setting">
+            <span>Reduce motion</span>
+            <input type="checkbox" id="motionToggle" class="switch">
+        </label>
+    </div>
+
+    <main id="main">
+        <header id="home" class="hero">
+            <!-- Background image slot -->
+            <div class="hero__media" aria-hidden="true">
+                <!-- TODO: add your hero background image, e.g.
+                <img src="assets/images/hero-bg.jpg" alt="" fetchpriority="high"> -->
+            </div>
+
+            <div class="hero__inner">
+                <div class="hero__title reveal">
                     <p class="eyebrow">Senior Full-Stack Laravel Vue Developer</p>
                     <h1>Building systems your next developer won't have to rewrite.</h1>
-                    <p class="hero-lead">
-                        I plan before I write a single line. Schema, service boundaries, domain logic — on paper first.
-                        That's why the things I ship stay maintainable when teams grow and requirements change.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="#projects" class="primary-cta">View Projects</a>
-                        <a href="#contact" class="secondary-cta">Discuss a Build</a>
-                        <a href="./assets/docs/Rayyan_Panja_CV.pdf" download class="secondary-cta">Download CV</a>
-                    </div>
-
-                    <div class="hero-signal-grid">
-                        <div class="signal-card">
-                            <span class="signal-value">Since 2021</span>
-                            <span class="signal-label">Shipping full-stack web products</span>
-                        </div>
-                        <div class="signal-card">
-                            <span class="signal-value">Laravel + Vue</span>
-                            <span class="signal-label">End-to-end product delivery</span>
-                        </div>
-                        <div class="signal-card">
-                            <span class="signal-value">SaaS Focus</span>
-                            <span class="signal-label">Multi-tenant, billing, dashboards, APIs</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="hero-panel animate" data-animation="fade-in" style="--delay: 150ms">
-                    <div class="terminal-window">
-                        <div class="terminal-bar">
-                            <span class="t-dot"></span>
-                            <span class="t-dot"></span>
-                            <span class="t-dot"></span>
-                            <span class="t-title">~/rayyan &mdash; zsh</span>
+                <div class="hero__cards">
+                    <!-- Intro / CTA -->
+                    <div class="glass card hero-intro reveal" style="--delay: 120ms">
+                        <p class="status"><span class="status__dot" aria-hidden="true"></span>Available for senior product engineering</p>
+                        <p class="hero-intro__lead">
+                            I plan before I write a single line. Schema, service boundaries, domain logic, on paper first.
+                            That's why the things I ship stay maintainable when teams grow and requirements change.
+                        </p>
+                        <div class="stat">
+                            <div class="avatar-stack" aria-hidden="true">
+                                <img src="assets/images/pigi-preview.jpeg" alt="">
+                                <span class="project-thumb--saas"></span>
+                                <span class="project-thumb--internal"></span>
+                                <span class="project-thumb--api"></span>
+                            </div>
+                            <!-- TODO: add a real count here (e.g. "3+ yrs / 20+ projects") if you want one; it isn't in the original content -->
+                            <p class="stat__text"><strong>Since 2021</strong><span>Shipping full-stack web products</span></p>
                         </div>
-                        <div class="terminal-body">
-                            <div class="t-line"><span class="t-prompt">&#10095;</span>&nbsp;<span class="t-cmd">whoami</span></div>
-                            <div class="t-out">Rayyan Panja &middot; Senior Full-Stack Engineer</div>
-                            <div class="t-gap"></div>
-                            <div class="t-line"><span class="t-prompt">&#10095;</span>&nbsp;<span class="t-cmd">cat approach.txt</span></div>
-                            <div class="t-out">Plan first. Schema before code.</div>
-                            <div class="t-out">Write for the next developer.</div>
-                            <div class="t-out">Extendable, not just working.</div>
-                            <div class="t-gap"></div>
-                            <div class="t-line"><span class="t-prompt">&#10095;</span>&nbsp;<span class="t-cmd">git log --oneline</span></div>
-                            <div class="t-out"><span class="t-hash">a3f9c1b</span>&nbsp;Schema designed before line one</div>
-                            <div class="t-out"><span class="t-hash">7d82e4a</span>&nbsp;Code your next dev won't curse</div>
-                            <div class="t-out"><span class="t-hash">2bc51f9</span>&nbsp;Systems built to outlast the sprint</div>
-                            <div class="t-gap"></div>
-                            <div class="t-line"><span class="t-prompt">&#10095;</span>&nbsp;<span class="t-cursor">&#9608;</span></div>
+                        <a href="#projects" class="btn btn--primary btn--block">View Projects</a>
+                        <div class="btn-split">
+                            <a href="#contact" class="btn btn--ghost">Discuss a Build</a>
+                            <a href="assets/docs/Rayyan_Panja_CV.pdf" download class="btn btn--ghost">Download CV</a>
                         </div>
                     </div>
-                    <div class="hero-panel-top">
-                        <span class="status-dot"></span>
-                        <span>Available for senior product engineering</span>
-                    </div>
+
+                    <!-- Featured project -->
+                    <article class="glass card card--media hero-feature reveal" style="--delay: 240ms" aria-labelledby="hero-feature-title">
+                        <img class="card__media hero-feature__thumb" src="assets/images/pigi-preview.jpeg" width="1280" height="800"
+                            alt="Pigi landing page: 'One config for every AI tool' with a terminal syncing configs to Claude Code, Cursor, Copilot, Continue and Windsurf">
+                        <div class="card__body">
+                            <p class="kicker">Featured · Live Product</p>
+                            <h2 id="hero-feature-title" class="hero-feature__title">Pigi: One config for every AI tool</h2>
+                            <ul class="tags" aria-label="Stack">
+                                <li>Laravel</li><li>Vue</li><li>MCP</li><li>CLI</li>
+                            </ul>
+                            <a href="#pigi" class="btn btn--primary btn--block">View Details</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </header>
 
-        <section id="about">
-            <div class="page-shell">
-                <div class="about-split">
-                    <div class="about-left animate" data-animation="fade-in">
-                        <p class="eyebrow">About</p>
-                        <h2 class="about-heading">I think<br>before I type.<br><em>On purpose.</em></h2>
-                        <p>I've been building Laravel and Vue products since 2021. Most of what I ship runs quietly —
+        <section id="projects" class="section" aria-labelledby="projects-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Projects</p>
+                    <h2 id="projects-title">Selected Work</h2>
+                    <p class="section-head__intro">
+                        Real systems I've built: one live product and representative case studies from NDA client work.
+                    </p>
+                </header>
+
+                <div class="filter-bar glass" id="filterBar" role="status" hidden>
+                    <span id="filterText"></span>
+                    <button type="button" class="btn btn--ghost btn--sm" id="clearFilters">Clear filters</button>
+                </div>
+
+                <!-- Featured: Pigi -->
+                <article id="pigi" class="glass card card--media project-featured reveal" aria-labelledby="pigi-title">
+                    <img class="card__media project-featured__img" src="assets/images/pigi-preview.jpeg" width="1280" height="800"
+                        loading="lazy"
+                        alt="Pigi landing page: 'One config for every AI tool' with a terminal syncing configs to Claude Code, Cursor, Copilot, Continue and Windsurf">
+                    <div class="card__body project-featured__body">
+                        <p class="project-meta">
+                            <span class="badge badge--live">Live Product</span>
+                            <span>pigi.dev</span>
+                        </p>
+                        <h3 id="pigi-title">Pigi: One config for every AI tool</h3>
+                        <p>
+                            Built a SaaS platform that lets teams centrally manage MCP server configurations, AI
+                            guidelines, and tool settings, then push everything to Claude Code, Cursor, GitHub
+                            Copilot, Windsurf, and more with a single CLI command.
+                        </p>
+                        <ul class="points">
+                            <li>Designed multi-tenant backend with Laravel: workspaces, team roles, and config versioning</li>
+                            <li>Built the sync engine that generates tool-specific config files from a single source of truth</li>
+                            <li>Architected the MCP server registry with stdio, SSE, and HTTP transport support</li>
+                            <li>Shipped the Vue dashboard for managing tools, servers, and team access</li>
+                        </ul>
+                        <ul class="tags" aria-label="Stack">
+                            <li>Laravel</li><li>Vue</li><li>MCP</li><li>CLI</li>
+                        </ul>
+                        <a href="https://pigi.dev" target="_blank" rel="noreferrer" class="btn btn--primary btn--block btn--external">
+                            Visit pigi.dev<span class="sr-only"> (opens in a new tab)</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- NDA case studies. TODO: swap the gradient placeholders for real (sanitised) screenshots if you get clearance. -->
+                <div class="project-grid">
+                    <article class="glass card card--media project-card reveal" style="--delay: 0ms">
+                        <div class="card__media project-thumb project-thumb--saas" aria-hidden="true"></div>
+                        <div class="card__body">
+                            <p class="project-meta">
+                                <span class="badge">SaaS Platform</span>
+                                <span>NDA, details on request</span>
+                            </p>
+                            <h3>Multi-tenant operations suite for service businesses</h3>
+                            <p>
+                                Built a Laravel and Vue platform for account management, team roles, customer records, task
+                                workflows, recurring billing, and client reporting across multiple tenant workspaces.
+                            </p>
+                            <ul class="points">
+                                <li>Designed tenant-aware data structure and permissions model</li>
+                                <li>Implemented Vue dashboards for daily operations and reporting</li>
+                                <li>Integrated Stripe subscriptions, invoices, and plan logic</li>
+                            </ul>
+                            <ul class="tags" aria-label="Stack">
+                                <li>Laravel</li><li>Vue</li><li>Stripe</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="glass card card--media project-card reveal" style="--delay: 100ms">
+                        <div class="card__media project-thumb project-thumb--internal" aria-hidden="true"></div>
+                        <div class="card__body">
+                            <p class="project-meta">
+                                <span class="badge">Internal Product</span>
+                                <span>NDA, details on request</span>
+                            </p>
+                            <h3>Admin and analytics portal for a fast-moving commerce team</h3>
+                            <p>
+                                Delivered an internal system that unified order operations, campaign tracking, refunds, and
+                                KPI visibility, reducing spreadsheet-driven processes and improving decision speed.
+                            </p>
+                            <ul class="points">
+                                <li>Created modular Laravel backend services for reporting workflows</li>
+                                <li>Built interactive Vue screens for search, filtering, and action queues</li>
+                                <li>Optimized queries and indexes for high-volume transactional data</li>
+                            </ul>
+                            <ul class="tags" aria-label="Stack">
+                                <li>Laravel</li><li>Vue</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="glass card card--media project-card reveal" style="--delay: 200ms">
+                        <div class="card__media project-thumb project-thumb--api" aria-hidden="true"></div>
+                        <div class="card__body">
+                            <p class="project-meta">
+                                <span class="badge">API Product</span>
+                                <span>NDA, details on request</span>
+                            </p>
+                            <h3>Custom API layer and partner integrations for business automation</h3>
+                            <p>
+                                Developed a secure API-first backend connecting third-party systems, webhooks, scheduled
+                                jobs, and approval workflows to support operational automation across teams.
+                            </p>
+                            <ul class="points">
+                                <li>Designed clean REST endpoints, auth flows, and integration contracts</li>
+                                <li>Handled async processing with queues, retries, and notifications</li>
+                                <li>Improved reliability around edge cases, observability, and failure recovery</li>
+                            </ul>
+                            <ul class="tags" aria-label="Stack">
+                                <li>REST APIs</li><li>Webhooks</li><li>Queues</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">About</p>
+                    <h2 id="about-title" class="about-heading">I think<br>before I type.<br><em>On purpose.</em></h2>
+                </header>
+
+                <div class="about-grid">
+                    <div class="glass card about-story reveal">
+                        <p>I've been building Laravel and Vue products since 2021. Most of what I ship runs quietly:
                             internal tools, SaaS platforms, multi-tenant systems. It doesn't go on Dribbble, but it has
                             to work correctly when traffic doubles and the product team changes direction.</p>
                         <p>My edge is planning. Before I write a line, I know the schema, the service boundaries, and
                             the three ways requirements will shift in six months. That's what keeps code extendable
                             instead of just working.</p>
+                        <dl class="signals">
+                            <div><dt>Since 2021</dt><dd>Shipping full-stack web products</dd></div>
+                            <div><dt>Laravel + Vue</dt><dd>End-to-end product delivery</dd></div>
+                            <div><dt>SaaS Focus</dt><dd>Multi-tenant, billing, dashboards, APIs</dd></div>
+                        </dl>
                     </div>
-                    <div class="about-right animate" data-animation="fade-in" style="--delay: 150ms">
-                        <div class="approach-item">
-                            <span class="approach-num">01</span>
-                            <div>
-                                <strong>Plan before code</strong>
-                                <span>Schema, service boundaries, and domain logic before a single file is
-                                    touched.</span>
-                            </div>
+
+                    <div class="terminal reveal" style="--delay: 120ms" role="img"
+                        aria-label="Terminal: whoami prints Rayyan Panja, Senior Full-Stack Engineer. approach.txt reads: Plan first. Schema before code. Write for the next developer. Extendable, not just working. git log shows: Schema designed before line one; Code your next dev won't curse; Systems built to outlast the sprint.">
+                        <div class="terminal__bar" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                            <span class="terminal__title">~/rayyan · zsh</span>
                         </div>
-                        <div class="approach-item">
-                            <span class="approach-num">02</span>
-                            <div>
-                                <strong>Write for the next developer</strong>
-                                <span>Readable, modular, extendable. Not clever. Not brittle.</span>
-                            </div>
-                        </div>
-                        <div class="approach-item">
-                            <span class="approach-num">03</span>
-                            <div>
-                                <strong>Own it end to end</strong>
-                                <span>Schema to backend services to Vue interfaces to deployment readiness.</span>
-                            </div>
+                        <div class="terminal__body" aria-hidden="true">
+                            <p><b>❯</b> whoami</p>
+                            <p class="out">Rayyan Panja · Senior Full-Stack Engineer</p>
+                            <p><b>❯</b> cat approach.txt</p>
+                            <p class="out">Plan first. Schema before code.<br>Write for the next developer.<br>Extendable, not just working.</p>
+                            <p><b>❯</b> git log --oneline</p>
+                            <p class="out"><i>a3f9c1b</i> Schema designed before line one<br><i>7d82e4a</i> Code your next dev won't curse<br><i>2bc51f9</i> Systems built to outlast the sprint</p>
+                            <p><b>❯</b> <span class="terminal__cursor">█</span></p>
                         </div>
                     </div>
                 </div>
+
+                <ol class="approach">
+                    <li class="glass card reveal" style="--delay: 0ms">
+                        <span class="approach__num" aria-hidden="true">01</span>
+                        <h3>Plan before code</h3>
+                        <p>Schema, service boundaries, and domain logic before a single file is touched.</p>
+                    </li>
+                    <li class="glass card reveal" style="--delay: 100ms">
+                        <span class="approach__num" aria-hidden="true">02</span>
+                        <h3>Write for the next developer</h3>
+                        <p>Readable, modular, extendable. Not clever. Not brittle.</p>
+                    </li>
+                    <li class="glass card reveal" style="--delay: 200ms">
+                        <span class="approach__num" aria-hidden="true">03</span>
+                        <h3>Own it end to end</h3>
+                        <p>Schema to backend services to Vue interfaces to deployment readiness.</p>
+                    </li>
+                </ol>
             </div>
         </section>
 
-        <section id="expertise">
-            <div class="page-shell">
-                <h2 class="section-title">Expertise</h2>
+        <section id="expertise" class="section" aria-labelledby="expertise-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <h2 id="expertise-title">Expertise</h2>
+                </header>
+
                 <div class="expertise-grid">
-                    <div class="expertise-card animate" data-animation="fade-in" style="--delay: 0ms">
-                        <div class="card-icon"><i class="bi bi-diagram-3"></i></div>
+                    <article class="glass card expertise-card reveal" style="--delay: 0ms">
+                        <span class="icon-chip" aria-hidden="true">
+                            <svg class="i" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="5" rx="1.5"/><rect x="2" y="17" width="6" height="5" rx="1.5"/><rect x="16" y="17" width="6" height="5" rx="1.5"/><path d="M12 7v5M5 17v-2.5A1.5 1.5 0 0 1 6.5 13h11a1.5 1.5 0 0 1 1.5 1.5V17"/></svg>
+                        </span>
                         <h3>Backend Architecture</h3>
                         <p>Laravel applications structured for growth, with service classes, queues, jobs, events,
                             permissions, and maintainable domain logic.</p>
-                    </div>
-                    <div class="expertise-card animate" data-animation="fade-in" style="--delay: 100ms">
-                        <div class="card-icon"><i class="bi bi-window-sidebar"></i></div>
+                    </article>
+                    <article class="glass card expertise-card reveal" style="--delay: 100ms">
+                        <span class="icon-chip" aria-hidden="true">
+                            <svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16M13 9h4M13 13h4"/></svg>
+                        </span>
                         <h3>Vue Product Interfaces</h3>
                         <p>Dashboards, admin panels, and workflow-heavy screens that turn complex business actions into
                             usable interfaces.</p>
-                    </div>
-                    <div class="expertise-card animate" data-animation="fade-in" style="--delay: 200ms">
-                        <div class="card-icon"><i class="bi bi-building-check"></i></div>
+                    </article>
+                    <article class="glass card expertise-card reveal" style="--delay: 200ms">
+                        <span class="icon-chip" aria-hidden="true">
+                            <svg class="i" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6M8 7h4M8 11h4M8 15h2M4 21h7"/><path d="m14 18 2 2 4-4"/></svg>
+                        </span>
                         <h3>Multi-Tenant SaaS</h3>
                         <p>Tenant-aware auth, account separation, plans, onboarding, roles, and subscription features
                             designed around real operational constraints.</p>
-                    </div>
-                    <div class="expertise-card animate" data-animation="fade-in" style="--delay: 300ms">
-                        <div class="card-icon"><i class="bi bi-plug"></i></div>
+                    </article>
+                    <article class="glass card expertise-card reveal" style="--delay: 300ms">
+                        <span class="icon-chip" aria-hidden="true">
+                            <svg class="i" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v3a6 6 0 0 1-12 0zM12 17v5"/></svg>
+                        </span>
                         <h3>Integrations and APIs</h3>
                         <p>RESTful APIs, third-party integrations, webhooks, payment flows, and asynchronous jobs for
                             connected business systems.</p>
-                    </div>
-                </div>
-
-                <div class="skills-panel animate" data-animation="fade-in">
-                    <p class="eyebrow">Stack and Tools</p>
-                    <div class="skills-wrap">
-                        <span class="skill-pill"><i class="bi bi-filetype-php"></i> Laravel</span>
-                        <span class="skill-pill"><i class="bi bi-filetype-js"></i> Vue.js</span>
-                        <span class="skill-pill"><i class="bi bi-database"></i> MySQL</span>
-                        <span class="skill-pill"><i class="bi bi-lightning-charge"></i> Redis</span>
-                        <span class="skill-pill"><i class="bi bi-code-square"></i> REST APIs</span>
-                        <span class="skill-pill"><i class="bi bi-credit-card"></i> Stripe</span>
-                        <span class="skill-pill"><i class="bi bi-git"></i> Git</span>
-                        <span class="skill-pill"><i class="bi bi-bootstrap"></i> Bootstrap</span>
-                        <span class="skill-pill"><i class="bi bi-shield-lock"></i> Auth and Roles</span>
-                        <span class="skill-pill"><i class="bi bi-bar-chart"></i> Reporting Systems</span>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="projects">
-            <div class="page-shell">
-                <h2 class="section-title">Selected Work</h2>
-                <p class="section-intro">
-                    Real systems I've built — one live product and representative case studies from NDA client work.
-                </p>
-
-                <div class="project-featured animate" data-animation="fade-in">
-                    <div class="project-preview project-preview--pigi" aria-hidden="true"></div>
-                    <div class="project-featured-body">
-                        <div class="project-meta">
-                            Live Product
-                            <span class="project-live"><i class="bi bi-arrow-up-right"></i> pigi.dev</span>
-                        </div>
-                        <h3>Pigi &mdash; One config for every AI tool</h3>
-                        <p>
-                            Built a SaaS platform that lets teams centrally manage MCP server configurations, AI
-                            guidelines, and tool settings — then push everything to Claude Code, Cursor, GitHub
-                            Copilot, Windsurf, and more with a single CLI command.
-                        </p>
-                        <ul class="project-points">
-                            <li>Designed multi-tenant backend with Laravel — workspaces, team roles, and config versioning</li>
-                            <li>Built the sync engine that generates tool-specific config files from a single source of truth</li>
-                            <li>Architected the MCP server registry with stdio, SSE, and HTTP transport support</li>
-                            <li>Shipped the Vue dashboard for managing tools, servers, and team access</li>
-                        </ul>
-                        <a href="https://pigi.dev" target="_blank" rel="noreferrer" class="project-link">
-                            Visit pigi.dev <i class="bi bi-arrow-up-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-grid">
-                    <div class="project-card animate" data-animation="fade-in" style="--delay: 0ms">
-                        <div class="project-preview project-preview--saas" aria-hidden="true"></div>
-                        <div class="project-meta">SaaS Platform <span class="project-nda">NDA — details on
-                                request</span></div>
-                        <h3>Multi-tenant operations suite for service businesses</h3>
-                        <p>
-                            Built a Laravel and Vue platform for account management, team roles, customer records, task
-                            workflows, recurring billing, and client reporting across multiple tenant workspaces.
-                        </p>
-                        <ul class="project-points">
-                            <li>Designed tenant-aware data structure and permissions model</li>
-                            <li>Implemented Vue dashboards for daily operations and reporting</li>
-                            <li>Integrated Stripe subscriptions, invoices, and plan logic</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-card animate" data-animation="fade-in" style="--delay: 100ms">
-                        <div class="project-preview project-preview--internal" aria-hidden="true"></div>
-                        <div class="project-meta">Internal Product <span class="project-nda">NDA — details on
-                                request</span></div>
-                        <h3>Admin and analytics portal for a fast-moving commerce team</h3>
-                        <p>
-                            Delivered an internal system that unified order operations, campaign tracking, refunds, and
-                            KPI visibility, reducing spreadsheet-driven processes and improving decision speed.
-                        </p>
-                        <ul class="project-points">
-                            <li>Created modular Laravel backend services for reporting workflows</li>
-                            <li>Built interactive Vue screens for search, filtering, and action queues</li>
-                            <li>Optimized queries and indexes for high-volume transactional data</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-card animate" data-animation="fade-in" style="--delay: 200ms">
-                        <div class="project-preview project-preview--api" aria-hidden="true"></div>
-                        <div class="project-meta">API Product <span class="project-nda">NDA — details on request</span>
-                        </div>
-                        <h3>Custom API layer and partner integrations for business automation</h3>
-                        <p>
-                            Developed a secure API-first backend connecting third-party systems, webhooks, scheduled
-                            jobs, and approval workflows to support operational automation across teams.
-                        </p>
-                        <ul class="project-points">
-                            <li>Designed clean REST endpoints, auth flows, and integration contracts</li>
-                            <li>Handled async processing with queues, retries, and notifications</li>
-                            <li>Improved reliability around edge cases, observability, and failure recovery</li>
-                        </ul>
-                    </div>
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="container">
+                <div class="glass card skills-card reveal">
+                    <header class="section-head">
+                        <p class="eyebrow">Skills</p>
+                        <h2 id="skills-title">Stack and Tools</h2>
+                    </header>
+                    <ul class="skills">
+                        <li>Laravel</li>
+                        <li>Vue.js</li>
+                        <li>MySQL</li>
+                        <li>Redis</li>
+                        <li>REST APIs</li>
+                        <li>Stripe</li>
+                        <li>Git</li>
+                        <li>Bootstrap</li>
+                        <li>Auth and Roles</li>
+                        <li>Reporting Systems</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <div class="page-shell">
-                <div class="contact-panel animate" data-animation="fade-in">
-                    <p class="eyebrow">Contact</p>
-                    <h2>Need a senior Laravel and Vue developer who can own product work end to end?</h2>
-                    <p class="contact-subline">Available for full-time roles, contract projects, and SaaS MVPs &mdash; let's figure out what fits.</p>
-                    <p>
-                        Available for full-time roles, contract product development, and backend-heavy full-stack work.
-                        Building a SaaS, modernizing an internal tool, or need a cleaner architecture on an existing
-                        Laravel codebase &mdash; let's talk.
-                    </p>
-                    <div class="freelance-cta-row">
-                        <span class="freelance-pill">Also open to project-based work &mdash; dashboards, internal tools, SaaS MVPs.</span>
-                        <a href="https://wa.me/919601786974" target="_blank" rel="noreferrer" class="project-start-btn">Start a Project &rarr;</a>
+        <section id="contact" class="section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="glass card contact-card reveal">
+                    <div class="contact-card__copy">
+                        <p class="eyebrow">Contact</p>
+                        <h2 id="contact-title">Need a senior Laravel and Vue developer who can own product work end to end?</h2>
+                        <p class="contact-card__subline">Available for full-time roles, contract projects, and SaaS MVPs. Let's figure out what fits.</p>
+                        <p>
+                            Available for full-time roles, contract product development, and backend-heavy full-stack work.
+                            Building a SaaS, modernizing an internal tool, or need a cleaner architecture on an existing
+                            Laravel codebase? Let's talk.
+                        </p>
                     </div>
-                    <div class="contact-action-row">
-                        <a href="https://calendly.com/rayyan-panja-work" target="_blank" rel="noreferrer" class="schedule-call-btn">
-                            <i class="bi bi-calendar-check"></i> Schedule a Call
+
+                    <div class="contact-card__actions">
+                        <p class="freelance">Also open to project-based work: dashboards, internal tools, SaaS MVPs.</p>
+                        <a href="https://wa.me/919601786974" target="_blank" rel="noreferrer" class="btn btn--primary btn--block">
+                            Start a Project<span class="sr-only"> on WhatsApp (opens in a new tab)</span>
                         </a>
-                    </div>
-                    <div class="contact-links">
-                        <a href="mailto:rayyan.panja.work@gmail.com"><i class="bi bi-envelope-fill"></i> Email me</a>
-                        <a href="https://www.linkedin.com/in/rayyan-panja-608757251/" target="_blank"
-                            rel="noreferrer"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                        <a href="https://github.com/RayyanPanja-123" target="_blank" rel="noreferrer"><i
-                                class="bi bi-github"></i> GitHub</a>
+                        <a href="https://calendly.com/rayyan-panja-work" target="_blank" rel="noreferrer" class="btn btn--ghost btn--block">
+                            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+                            Schedule a Call<span class="sr-only"> (opens in a new tab)</span>
+                        </a>
+                        <ul class="contact-links">
+                            <li><a href="mailto:rayyan.panja.work@gmail.com" class="btn btn--ghost btn--sm">
+                                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+                                Email me</a></li>
+                            <li><a href="https://www.linkedin.com/in/rayyan-panja-608757251/" target="_blank" rel="noreferrer" class="btn btn--ghost btn--sm">
+                                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2 2 0 0 1 4 0v3"/></svg>
+                                LinkedIn</a></li>
+                            <li><a href="https://github.com/RayyanPanja-123" target="_blank" rel="noreferrer" class="btn btn--ghost btn--sm">
+                                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4M9 18c-4.51 2-5-2-7-2"/></svg>
+                                GitHub</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="page-shell footer-inner">
-            <a href="#home" class="brand-mark footer-brand">&lt;RP /&gt;</a>
-            <nav class="footer-nav" aria-label="Footer navigation">
+    <footer class="footer">
+        <div class="glass footer__bar">
+            <a href="#home" class="footer__brand">&lt;RP /&gt;</a>
+            <nav class="footer__nav" aria-label="Footer">
                 <a href="#about">About</a>
                 <a href="#expertise">Expertise</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <p class="footer-copy">&copy; 2025 Rayyan Panja</p>
+            <p class="footer__copy">&copy; 2025 Rayyan Panja</p>
         </div>
     </footer>
 
@@ -346,9 +527,7 @@
         <span class="wa-tooltip">Chat on WhatsApp</span>
     </a>
 
-    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/observers.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
