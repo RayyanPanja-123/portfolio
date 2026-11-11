@@ -58,8 +58,8 @@
                 </span>
                 <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </button>
-            <span class="segmented__divider" aria-hidden="true"></span>
-            <button type="button" class="segment" popovertarget="pop-stack" aria-haspopup="true" aria-expanded="false">
+            <span data-projects class="segmented__divider" aria-hidden="true"></span>
+            <button data-projects type="button" class="segment" popovertarget="pop-stack" aria-haspopup="true" aria-expanded="false">
                 <span class="segment__text">
                     <span class="segment__label">Stack</span>
                     <span class="segment__value" id="stackValue">Laravel · Vue</span>
@@ -89,13 +89,13 @@
         <a href="#home" data-spy aria-label="Home">
             <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>
         </a>
-        <button type="button" popovertarget="pop-search" aria-label="Search projects" aria-expanded="false">
+        <button data-projects type="button" popovertarget="pop-search" aria-label="Search projects" aria-expanded="false">
             <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         </button>
-        <a href="#projects" data-spy aria-label="Projects">
+        <a data-projects href="#projects" data-spy aria-label="Projects">
             <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
         </a>
-        <a href="#pigi" data-spy aria-label="Featured project">
+        <a data-projects href="#pigi" data-spy aria-label="Featured project">
             <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-9-9a4.8 4.8 0 0 1 9-3 4.8 4.8 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg>
         </a>
         <a href="assets/docs/Rayyan_Panja_CV.pdf" download aria-label="Download resume">
@@ -116,7 +116,7 @@
         <p class="pop__title">Jump to</p>
         <ul class="pop__list">
             <li><a href="#home" data-spy>Home</a></li>
-            <li><a href="#projects" data-spy>Projects</a></li>
+            <li data-projects><a href="#projects" data-spy>Projects</a></li>
             <li><a href="#about" data-spy>About</a></li>
             <li><a href="#expertise" data-spy>Expertise</a></li>
             <li><a href="#skills" data-spy>Skills</a></li>
@@ -197,7 +197,7 @@
                             <!-- TODO: add a real count here (e.g. "3+ yrs / 20+ projects") if you want one; it isn't in the original content -->
                             <p class="stat__text"><strong>Since 2021</strong><span>Shipping full-stack web products</span></p>
                         </div>
-                        <a href="#projects" class="btn btn--primary btn--block">View Projects</a>
+                        <a data-projects href="#projects" class="btn btn--primary btn--block">View Projects</a>
                         <div class="btn-split">
                             <a href="#contact" class="btn btn--ghost">Discuss a Build</a>
                             <a href="assets/docs/Rayyan_Panja_CV.pdf" download class="btn btn--ghost">Download CV</a>
@@ -205,7 +205,7 @@
                     </div>
 
                     <!-- Featured project -->
-                    <article class="glass card card--media hero-feature reveal" style="--delay: 240ms" aria-labelledby="hero-feature-title">
+                    <article data-projects class="glass card card--media hero-feature reveal" style="--delay: 240ms" aria-labelledby="hero-feature-title">
                         <img class="card__media hero-feature__thumb" src="assets/images/pigi-preview.jpeg" width="1280" height="800"
                             alt="Pigi landing page: 'One config for every AI tool' with a terminal syncing configs to Claude Code, Cursor, Copilot, Continue and Windsurf">
                         <div class="card__body">
@@ -221,7 +221,7 @@
             </div>
         </header>
 
-        <section id="projects" class="section" aria-labelledby="projects-title">
+        <section data-projects id="projects" class="section" aria-labelledby="projects-title">
             <div class="container">
                 <header class="section-head reveal">
                     <p class="eyebrow">Projects</p>
@@ -513,7 +513,7 @@
             <nav class="footer__nav" aria-label="Footer">
                 <a href="#about">About</a>
                 <a href="#expertise">Expertise</a>
-                <a href="#projects">Projects</a>
+                <a data-projects href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
             <p class="footer__copy">&copy; 2025 Rayyan Panja</p>
