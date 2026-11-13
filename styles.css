@@ -674,6 +674,7 @@ a.pill:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
 
 /* Placeholder thumbnails for NDA work (TODO: real images) */
 .project-thumb { aspect-ratio: 16 / 9; }
+img.project-thumb { display: block; width: 100%; height: auto; object-fit: cover; object-position: top; }
 .project-thumb--saas {
     background:
         radial-gradient(circle at 25% 30%, rgba(255, 255, 255, 0.7), transparent 40%),
@@ -968,3 +969,8 @@ a.pill:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
 
 /* Name in the hero eyebrow stays in normal case; only the role is uppercase */
 .eyebrow__name { text-transform: none; letter-spacing: 0.02em; font-weight: 700; }
+
+/* "And many more" card: fills the last grid slot, content centred vertically */
+.project-more { display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
+.project-more h3, .project-more p { margin: 0; }
+.project-more .eyebrow { color: var(--text-muted); }
