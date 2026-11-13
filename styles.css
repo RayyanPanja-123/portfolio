@@ -3,22 +3,22 @@
    ========================================================= */
 :root {
     /* Brand palette */
-    --blue: #8DB9F0;        /* sky at the top of the hero gradient */
-    --lavender: #E9E8F8;    /* mid-sky haze, light page background tint */
-    --peach: #F5B69E;       /* horizon glow at the bottom of the hero */
-    --indigo: #2B2A6B;      /* buttons, accents, headings */
+    --blue: #6FCF97;        /* jade sky at the top of the hero gradient (Rayquaza scales) */
+    --lavender: #E6F4EC;    /* mint haze, light page background tint */
+    --peach: #F2C94C;       /* gold ring markings: horizon glow */
+    --indigo: #0F4D36;      /* deep emerald: buttons, accents, headings */
 
     /* Page */
-    --bg: #F3F2FB;                  /* page background below the hero */
-    --text: #1F1E4D;                /* body text (on glass and page) */
-    --text-muted: #4A4978;          /* secondary text, ≥ 4.5:1 on glass */
-    --icon-muted: #5B5A96;          /* inactive dock / nav icons */
-    --divider: rgba(43, 42, 107, 0.14);
+    --bg: #EFF6F1;                  /* page background below the hero */
+    --text: #0E2A1F;                /* body text (on glass and page) */
+    --text-muted: #3D5C4E;          /* secondary text, ≥ 4.5:1 on glass */
+    --icon-muted: #4F7464;          /* inactive dock / nav icons */
+    --divider: rgba(15, 77, 54, 0.14);
 
     /* Accent (primary buttons, active chips) */
     --accent: var(--indigo);        /* primary button fill */
     --accent-text: #FFFFFF;         /* text on primary button */
-    --accent-hover: #3A3990;
+    --accent-hover: #16654A;
 
     /* Active dock item: filled white circle with indigo icon */
     --dock-active-bg: #FFFFFF;
@@ -29,19 +29,19 @@
     --glass-bg-strong: rgba(255, 255, 255, 0.82); /* dropdowns sit over busy content, so more opaque */
     --glass-border: rgba(255, 255, 255, 0.6);
     --glass-blur: 20px;                           /* backdrop blur strength */
-    --chip-bg: rgba(43, 42, 107, 0.07);           /* tags / ghost buttons / hovers */
+    --chip-bg: rgba(15, 77, 54, 0.07);           /* tags / ghost buttons / hovers */
     --field-bg: rgba(255, 255, 255, 0.7);         /* inputs */
 
     /* Hero sky: top → horizon */
     --sky: linear-gradient(180deg,
             var(--blue) 0%,
-            #B7C8F3 32%,
+            #A8E0BF 32%,
             var(--lavender) 58%,
-            #F8D4C4 82%,
+            #F6E3A1 82%,
             var(--peach) 100%);
-    --horizon-glow: rgba(245, 182, 158, 0.85);  /* the warm sun-glow at the bottom */
+    --horizon-glow: rgba(242, 201, 76, 0.85);  /* the warm sun-glow at the bottom */
     --hero-ink: var(--indigo);                  /* headline colour over the sky */
-    --heading-accent: linear-gradient(90deg, #4B49B0, #B85A3C);  /* gradient text on accent words */
+    --heading-accent: linear-gradient(90deg, #138A5A, #C0392B);  /* gradient text on accent words */
 
     /* Radius system: nested radius = outer radius − padding (concentric) */
     --radius-pill: 9999px;    /* nav pills, dock, buttons, inputs, tags, avatar chips */
@@ -52,14 +52,14 @@
 
     /* Depth */
     --shadow:
-        0 1px 2px rgba(43, 42, 107, 0.06),
-        0 8px 24px rgba(43, 42, 107, 0.08),
-        0 24px 64px rgba(43, 42, 107, 0.12);
+        0 1px 2px rgba(15, 77, 54, 0.06),
+        0 8px 24px rgba(15, 77, 54, 0.08),
+        0 24px 64px rgba(15, 77, 54, 0.12);
     --shadow-lift:
-        0 2px 4px rgba(43, 42, 107, 0.08),
-        0 14px 32px rgba(43, 42, 107, 0.12),
-        0 36px 80px rgba(43, 42, 107, 0.16);
-    --shadow-soft: 0 2px 6px rgba(43, 42, 107, 0.12), 0 6px 16px rgba(43, 42, 107, 0.10);
+        0 2px 4px rgba(15, 77, 54, 0.08),
+        0 14px 32px rgba(15, 77, 54, 0.12),
+        0 36px 80px rgba(15, 77, 54, 0.16);
+    --shadow-soft: 0 2px 6px rgba(15, 77, 54, 0.12), 0 6px 16px rgba(15, 77, 54, 0.10);
 
     /* Layout & motion */
     --dock-space: 6.5rem;      /* left gutter reserved for the dock on desktop */
@@ -75,36 +75,36 @@
     color-scheme: light;
 }
 
-/* Dark = deep indigo dusk */
+/* Dark = Rayquaza in the night sky: black-green with gold glow */
 [data-theme="dark"] {
-    --bg: #0F0E2B;
-    --text: #EEEDFB;
-    --text-muted: #BEBDDF;
-    --icon-muted: #B3B2DA;
-    --divider: rgba(233, 232, 248, 0.16);
+    --bg: #07140F;
+    --text: #E8F5EE;
+    --text-muted: #B5D3C3;
+    --icon-muted: #9FC4B1;
+    --divider: rgba(230, 244, 236, 0.16);
 
-    --accent: #4A48B8;              /* brighter indigo so buttons read on the dark sky */
+    --accent: #1E9E6A;              /* brighter emerald so buttons read on the dark sky */
     --accent-text: #FFFFFF;
-    --accent-hover: #5B59CC;
+    --accent-hover: #25B87C;
 
     --dock-active-bg: #FFFFFF;
     --dock-active-fg: var(--indigo);
 
-    --glass-bg: rgba(28, 27, 74, 0.55);
-    --glass-bg-strong: rgba(28, 27, 74, 0.9);
+    --glass-bg: rgba(12, 42, 31, 0.55);
+    --glass-bg-strong: rgba(12, 42, 31, 0.9);
     --glass-border: rgba(255, 255, 255, 0.14);
-    --chip-bg: rgba(233, 232, 248, 0.10);
-    --field-bg: rgba(15, 14, 43, 0.6);
+    --chip-bg: rgba(230, 244, 236, 0.10);
+    --field-bg: rgba(7, 20, 15, 0.6);
 
     --sky: linear-gradient(180deg,
-            #0E0D2A 0%,
-            #1C1B52 35%,
+            #050D0A 0%,
+            #0B2A1F 35%,
             var(--indigo) 60%,
-            #5B4372 84%,
-            #9A6A7A 100%);
-    --horizon-glow: rgba(245, 182, 158, 0.6);
-    --hero-ink: #F4F3FF;
-    --heading-accent: linear-gradient(90deg, #B9C9F3, var(--peach));
+            #2F6B3F 84%,
+            #7C8A2E 100%);
+    --horizon-glow: rgba(242, 201, 76, 0.5);
+    --hero-ink: #F2FBF6;
+    --heading-accent: linear-gradient(90deg, #6FCF97, var(--peach));
 
     --shadow:
         0 1px 2px rgba(0, 0, 0, 0.25),
@@ -213,9 +213,9 @@ h1, h2, h3 { line-height: 1.1; margin: 0; }
 .btn--primary {
     min-height: 3rem;
     background: var(--accent); color: var(--accent-text);
-    box-shadow: 0 6px 18px rgba(43, 42, 107, 0.25);
+    box-shadow: 0 6px 18px rgba(15, 77, 54, 0.25);
 }
-.btn--primary:hover { background: var(--accent-hover); box-shadow: 0 10px 26px rgba(43, 42, 107, 0.32); }
+.btn--primary:hover { background: var(--accent-hover); box-shadow: 0 10px 26px rgba(15, 77, 54, 0.32); }
 .btn--primary::after {
     content: "";
     width: 1rem; height: 1rem;
@@ -514,8 +514,16 @@ a.pill:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
     min-height: 100svh;
     display: flex;
     overflow: hidden;
-    background: var(--sky);
     color: var(--hero-ink);
+}
+
+/* Sky: dissolves to transparent so the page's orbs flow through (no seam) */
+.hero::after {
+    content: "";
+    position: absolute; z-index: -3; inset: 0;
+    background: var(--sky);
+    mask-image: linear-gradient(#000 calc(100% - 25vh), transparent);
+    pointer-events: none;
 }
 
 /* Warm horizon glow */
@@ -526,19 +534,16 @@ a.pill:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
     width: 140vw; height: 70vh;
     transform: translateX(-50%);
     background: radial-gradient(closest-side, var(--horizon-glow), transparent);
-    pointer-events: none;
-}
-/* Soft fade into the page below */
-.hero::after {
-    content: "";
-    position: absolute; z-index: -1; inset: auto 0 0 0;
-    height: 18vh;
-    background: linear-gradient(to bottom, transparent, var(--bg));
+    /* box is centred on the hero's bottom edge (50%), so fade out before it */
+    mask-image: linear-gradient(#000 15%, transparent 50%);
     pointer-events: none;
 }
 
 /* Background image slot: fills the hero, sky gradient tints through */
-.hero__media { position: absolute; inset: 0; z-index: -2; }
+.hero__media {
+    position: absolute; inset: 0; z-index: -2;
+    mask-image: linear-gradient(#000 calc(100% - 25vh), transparent);
+}
 .hero__media img {
     width: 100%; height: 100%;
     object-fit: cover;
@@ -716,8 +721,8 @@ a.pill:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-card);
-    background: #15143A;
-    color: #E9E8F8;
+    background: #0B1F17;
+    color: #E6F4EC;
     box-shadow: var(--shadow);
     font: 0.88rem/1.7 ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
     transition: transform var(--hover), box-shadow var(--hover);
@@ -727,11 +732,11 @@ a.pill:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
 .terminal__bar > span:not(.terminal__title) { width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--peach); }
 .terminal__bar > span:nth-child(2) { background: var(--lavender); }
 .terminal__bar > span:nth-child(3) { background: var(--blue); }
-.terminal__title { margin-left: 0.6rem; font-size: 0.78rem; color: #A9A8D2; }
+.terminal__title { margin-left: 0.6rem; font-size: 0.78rem; color: #9FC4B1; }
 .terminal__body { padding: 0 1.5rem 1.5rem; }
 .terminal__body p { margin: 0 0 0.6rem; }
 .terminal__body b { font-weight: 400; color: var(--blue); }
-.terminal__body .out { color: #C4C3E6; }
+.terminal__body .out { color: #B5D3C3; }
 .terminal__body i { font-style: normal; color: var(--peach); }
 .terminal__cursor { animation: blink 1.1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
@@ -954,7 +959,7 @@ a.pill:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
 /* Fallback when backdrop-filter is unsupported: more opaque glass */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
     :root { --glass-bg: rgba(255, 255, 255, 0.9); }
-    [data-theme="dark"] { --glass-bg: rgba(28, 27, 74, 0.92); }
+    [data-theme="dark"] { --glass-bg: rgba(12, 42, 31, 0.92); }
 }
 
 /* Projects temporarily removed — delete this rule to bring them back */
