@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio.rayyan-panja-work.workers.dev/sitemap.xml
