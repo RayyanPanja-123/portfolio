@@ -220,7 +220,7 @@
                                 <span class="project-thumb--api"></span>
                             </div>
                             <!-- TODO: add a real count here (e.g. "3+ yrs / 20+ projects") if you want one; it isn't in the original content -->
-                            <p class="stat__text"><strong>Since 2021</strong><span>Shipping full-stack web products</span></p>
+                            <p class="stat__text"><strong>Since 2023</strong><span>Shipping full-stack web products</span></p>
                         </div>
                         <a data-projects href="#projects" class="btn btn--primary btn--block">View Projects</a>
                         <div class="btn-split">
@@ -252,7 +252,7 @@
                     <p class="eyebrow">Projects</p>
                     <h2 id="projects-title">Selected Work</h2>
                     <p class="section-head__intro">
-                        Real systems I've built: one live product and representative case studies from NDA client work.
+                        Real systems I've built: one live product and client platforms ranging from APIs to SaaS.
                     </p>
                 </header>
 
@@ -273,18 +273,18 @@
                         </p>
                         <h3 id="pigi-title">Pigi: One config for every AI tool</h3>
                         <p>
-                            Built a SaaS platform that lets teams centrally manage MCP server configurations, AI
-                            guidelines, and tool settings, then push everything to Claude Code, Cursor, GitHub
-                            Copilot, Windsurf, and more with a single CLI command.
+                            A multi-tenant SaaS for dev teams to centrally manage and sync AI tool configurations (MCP
+                            servers, CLAUDE.md, agent prompts) across every developer machine. Ships with a companion
+                            CLI and an Electron desktop app for local sync.
                         </p>
                         <ul class="points">
-                            <li>Designed multi-tenant backend with Laravel: workspaces, team roles, and config versioning</li>
-                            <li>Built the sync engine that generates tool-specific config files from a single source of truth</li>
-                            <li>Architected the MCP server registry with stdio, SSE, and HTTP transport support</li>
-                            <li>Shipped the Vue dashboard for managing tools, servers, and team access</li>
+                            <li>Composable config model: stores components, not final files. A ConfigAssembler service builds each tool's config on sync, so a shared profile change reaches every linked project</li>
+                            <li>Full Stripe billing lifecycle with webhook-driven subscription sync and per-plan limits enforced in middleware</li>
+                            <li>Per-org database isolation via stancl/tenancy</li>
+                            <li>Async AI content generation via the Anthropic API, plus a claim → execute → advance phase workflow for concurrent team work</li>
                         </ul>
                         <ul class="tags" aria-label="Stack">
-                            <li>Laravel</li><li>Vue</li><li>MCP</li><li>CLI</li>
+                            <li>Laravel</li><li>Vue</li><li>Stripe</li><li>CLI</li>
                         </ul>
                         <a href="https://pigi.dev" target="_blank" rel="noreferrer" class="btn btn--primary btn--block btn--external">
                             Visit pigi.dev<span class="sr-only"> (opens in a new tab)</span>
@@ -292,73 +292,114 @@
                     </div>
                 </article>
 
-                <!-- NDA case studies. TODO: swap the gradient placeholders for real (sanitised) screenshots if you get clearance. -->
+                <!-- Client work (names as listed on the public CV) -->
                 <div class="project-grid">
                     <article class="glass card card--media project-card reveal" style="--delay: 0ms">
                         <div class="card__media project-thumb project-thumb--saas" aria-hidden="true"></div>
                         <div class="card__body">
                             <p class="project-meta">
-                                <span class="badge">SaaS Platform</span>
-                                <span>NDA, details on request</span>
+                                <span class="badge">B2B SaaS</span>
+                                <span>In progress</span>
                             </p>
-                            <h3>Multi-tenant operations suite for service businesses</h3>
+                            <h3>CA Vault: document vault for Chartered Accountant firms</h3>
                             <p>
-                                Built a Laravel and Vue platform for account management, team roles, customer records, task
-                                workflows, recurring billing, and client reporting across multiple tenant workspaces.
+                                A multi-tenant document vault where each CA firm is an isolated tenant managing tax documents for its clients.
                             </p>
                             <ul class="points">
-                                <li>Designed tenant-aware data structure and permissions model</li>
-                                <li>Implemented Vue dashboards for daily operations and reporting</li>
-                                <li>Integrated Stripe subscriptions, invoices, and plan logic</li>
+                                <li>Client self-service portal with OTP login, TOTP two-factor and passkey (WebAuthn) sign-in via Fortify</li>
+                                <li>WhatsApp API notifications for document workflows</li>
+                                <li>End-to-end encryption for sensitive financial records</li>
                             </ul>
                             <ul class="tags" aria-label="Stack">
-                                <li>Laravel</li><li>Vue</li><li>Stripe</li>
+                                <li>Laravel</li><li>Vue</li><li>Inertia</li><li>TypeScript</li>
                             </ul>
                         </div>
                     </article>
 
                     <article class="glass card card--media project-card reveal" style="--delay: 100ms">
-                        <div class="card__media project-thumb project-thumb--internal" aria-hidden="true"></div>
+                        <div class="card__media project-thumb project-thumb--api" aria-hidden="true"></div>
                         <div class="card__body">
                             <p class="project-meta">
-                                <span class="badge">Internal Product</span>
-                                <span>NDA, details on request</span>
+                                <span class="badge">Platform + API</span>
+                                <span>Client project</span>
                             </p>
-                            <h3>Admin and analytics portal for a fast-moving commerce team</h3>
+                            <h3>Fruchthof: B2B agricultural operations platform</h3>
                             <p>
-                                Delivered an internal system that unified order operations, campaign tracking, refunds, and
-                                KPI visibility, reducing spreadsheet-driven processes and improving decision speed.
+                                An Inertia web admin plus a versioned REST API serving a third-party mobile app with OTP auth, cart, wishlist and order tracking.
                             </p>
                             <ul class="points">
-                                <li>Created modular Laravel backend services for reporting workflows</li>
-                                <li>Built interactive Vue screens for search, filtering, and action queues</li>
-                                <li>Optimized queries and indexes for high-volume transactional data</li>
+                                <li>Sanctum-authenticated <code>/api/v1/</code> for the mobile client</li>
+                                <li>Two-way contact and invoice sync with LexOffice (Lexware)</li>
+                                <li>FCM push notifications for order updates and Google Maps delivery routing</li>
                             </ul>
                             <ul class="tags" aria-label="Stack">
-                                <li>Laravel</li><li>Vue</li>
+                                <li>Laravel</li><li>Inertia</li><li>REST APIs</li><li>Firebase</li>
                             </ul>
                         </div>
                     </article>
 
                     <article class="glass card card--media project-card reveal" style="--delay: 200ms">
+                        <div class="card__media project-thumb project-thumb--internal" aria-hidden="true"></div>
+                        <div class="card__body">
+                            <p class="project-meta">
+                                <span class="badge">AI Platform</span>
+                                <span>Client project</span>
+                            </p>
+                            <h3>PCT (LetzTalk): AI-powered corporate training</h3>
+                            <p>
+                                Trainers author versioned scenarios with their own instructions, files and speech settings; students practise with an OpenAI assistant in real time.
+                            </p>
+                            <ul class="points">
+                                <li>Versioned prompt management, so live scenarios update without breaking existing student threads</li>
+                                <li>Audio pipeline merging student recordings into one per-session file with FFmpeg</li>
+                                <li>Trainer view with full chat replay, correction notes and grading</li>
+                            </ul>
+                            <ul class="tags" aria-label="Stack">
+                                <li>Laravel</li><li>Vue</li><li>OpenAI</li><li>FFmpeg</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="glass card card--media project-card reveal" style="--delay: 0ms">
+                        <div class="card__media project-thumb project-thumb--saas" aria-hidden="true"></div>
+                        <div class="card__body">
+                            <p class="project-meta">
+                                <span class="badge">Enterprise LMS</span>
+                                <span>Client project</span>
+                            </p>
+                            <h3>Mission Safety: multi-role safety training LMS</h3>
+                            <p>
+                                Admin, company, employee and trainer roles, with sequenced video and PDF courses, a full exam engine and automatic pass/fail scoring.
+                            </p>
+                            <ul class="points">
+                                <li>Certificate pipeline with QR codes, signature capture, TCPDF rendering and bulk ZIP export</li>
+                                <li>Stripe billing synced to SevDesk accounting</li>
+                                <li>Firebase FCM push notifications</li>
+                            </ul>
+                            <ul class="tags" aria-label="Stack">
+                                <li>Laravel</li><li>Vue</li><li>Stripe</li><li>Firebase</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="glass card card--media project-card reveal" style="--delay: 100ms">
                         <div class="card__media project-thumb project-thumb--api" aria-hidden="true"></div>
                         <div class="card__body">
                             <p class="project-meta">
-                                <span class="badge">API Product</span>
-                                <span>NDA, details on request</span>
+                                <span class="badge">Optimisation</span>
+                                <span>Client project</span>
                             </p>
-                            <h3>Custom API layer and partner integrations for business automation</h3>
+                            <h3>FCN Seating: VIP lounge planner for FC Nürnberg</h3>
                             <p>
-                                Developed a secure API-first backend connecting third-party systems, webhooks, scheduled
-                                jobs, and approval workflows to support operational automation across teams.
+                                Admins assign corporate guests with booked seat credits across multiple lounges and tables on matchdays.
                             </p>
                             <ul class="points">
-                                <li>Designed clean REST endpoints, auth flows, and integration contracts</li>
-                                <li>Handled async processing with queues, retries, and notifications</li>
-                                <li>Improved reliability around edge cases, observability, and failure recovery</li>
+                                <li>Constraint-programming seating solver in Python (Google OR-Tools), run from Laravel queue jobs</li>
+                                <li>Models seating as a CSP, diagnoses infeasible plans and posts results back via API</li>
+                                <li>Per-company credit ledger, ag-Grid attendee tables and CSV export</li>
                             </ul>
                             <ul class="tags" aria-label="Stack">
-                                <li>REST APIs</li><li>Webhooks</li><li>Queues</li>
+                                <li>Laravel</li><li>Python</li><li>OR-Tools</li><li>Queues</li>
                             </ul>
                         </div>
                     </article>
@@ -375,14 +416,14 @@
 
                 <div class="about-grid">
                     <div class="glass card about-story reveal">
-                        <p>I've been building Laravel and Vue products since 2021. Most of what I ship runs quietly:
+                        <p>I've been building Laravel and Vue products since 2023. Most of what I ship runs quietly:
                             internal tools, SaaS platforms, multi-tenant systems. It doesn't go on Dribbble, but it has
                             to work correctly when traffic doubles and the product team changes direction.</p>
                         <p>My edge is planning. Before I write a line, I know the schema, the service boundaries, and
                             the three ways requirements will shift in six months. That's what keeps code extendable
                             instead of just working.</p>
                         <dl class="signals">
-                            <div><dt>Since 2021</dt><dd>Shipping full-stack web products</dd></div>
+                            <div><dt>Since 2023</dt><dd>Shipping full-stack web products</dd></div>
                             <div><dt>Laravel + Vue</dt><dd>End-to-end product delivery</dd></div>
                             <div><dt>SaaS Focus</dt><dd>Multi-tenant, billing, dashboards, APIs</dd></div>
                         </dl>

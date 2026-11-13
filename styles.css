@@ -966,8 +966,5 @@ a.pill:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
     [data-theme="dark"] { --glass-bg: rgba(12, 42, 31, 0.92); }
 }
 
-/* Projects temporarily removed — delete this rule to bring them back */
-[data-projects] { display: none !important; }
-
 /* Name in the hero eyebrow stays in normal case; only the role is uppercase */
 .eyebrow__name { text-transform: none; letter-spacing: 0.02em; font-weight: 700; }
