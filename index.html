@@ -337,6 +337,54 @@
                         </div>
                     </article>
 
+                    <article class="glass card card--media project-card reveal" style="--delay: 0ms">
+                        <img class="card__media project-thumb" src="assets/images/shorts-clipper-preview.jpeg" width="1280" height="800" loading="lazy"
+                            alt="Shorts Clipper web app: the Find moments step with a YouTube URL field, clip count, niche preset, pasted timestamps and an AI pick toggle">
+                        <div class="card__body">
+                            <p class="project-meta">
+                                <span class="badge">Local web app</span>
+                                <span>Personal tool</span>
+                            </p>
+                            <h3>Shorts Clipper: YouTube video to vertical Shorts</h3>
+                            <p>
+                                Paste a YouTube URL and get ready-to-post 1080×1920 Shorts from a local web page.
+                                No paid services: downloading, transcription and rendering all run on your machine.
+                            </p>
+                            <ul class="points">
+                                <li>Finds moments from pasted timestamps, a Gemini pick over the captions, YouTube's "Most replayed" heatmap or loudness peaks</li>
+                                <li>Smart vertical layout: facecam-over-gameplay for streams, a speaker-tracking 9:16 crop for panel shows</li>
+                                <li>Word-by-word burned-in captions via faster-whisper, silence trimming and loudness-driven punch-in zooms</li>
+                            </ul>
+                            <ul class="tags" aria-label="Stack">
+                                <li>Python</li><li>FastAPI</li><li>OpenCV</li><li>FFmpeg</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="glass card card--media project-card reveal" style="--delay: 100ms">
+                        <img class="card__media project-thumb" src="assets/images/scribblefactory-preview.jpeg" width="1280" height="800" loading="lazy"
+                            alt="Scribble Factory dashboard: series, parts in progress, approvals and a posts-per-month chart">
+                        <div class="card__body">
+                            <p class="project-meta">
+                                <span class="badge">Local web app</span>
+                                <span>Personal tool</span>
+                            </p>
+                            <h3>scribblefactory: offline stickman animation shorts</h3>
+                            <p>
+                                A local, fully offline pipeline that turns a script and a recorded voice track into
+                                9:16 stickman animated shorts at 1080×1920, 30fps.
+                            </p>
+                            <ul class="points">
+                                <li>Three.js renderer driven headlessly by Playwright, frames assembled with FFmpeg</li>
+                                <li>Python pipeline stages behind a FastAPI app, with Whisper for voice timing</li>
+                                <li>Vue 3 + TypeScript + Tailwind studio UI with live progress over server-sent events</li>
+                            </ul>
+                            <ul class="tags" aria-label="Stack">
+                                <li>Three.js</li><li>Python</li><li>FastAPI</li><li>Vue</li><li>TypeScript</li>
+                            </ul>
+                        </div>
+                    </article>
+
                     <!-- Not an <article>, so the stack filter/search doesn't count it as a project -->
                     <div class="glass card project-more reveal" style="--delay: 0ms">
                         <p class="eyebrow">And many more…</p>
