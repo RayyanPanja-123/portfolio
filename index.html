@@ -120,7 +120,7 @@
         <a data-projects href="#projects" data-spy aria-label="Projects">
             <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
         </a>
-        <a data-projects href="#pigi" data-spy aria-label="Featured project">
+        <a data-projects href="#vhostctl" data-spy aria-label="Featured project">
             <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-9-9a4.8 4.8 0 0 1 9-3 4.8 4.8 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg>
         </a>
         <a href="assets/docs/Rayyan_Panja_CV.pdf" download aria-label="Download resume">
@@ -214,7 +214,7 @@
                         </p>
                         <div class="stat">
                             <div class="avatar-stack" aria-hidden="true">
-                                <img src="assets/images/pigi-preview.jpeg" alt="">
+                                <img src="assets/images/vhostctl-preview.jpeg" alt="">
                                 <span class="project-thumb--saas"></span>
                                 <span class="project-thumb--internal"></span>
                                 <span class="project-thumb--api"></span>
@@ -231,15 +231,15 @@
 
                     <!-- Featured project -->
                     <article data-projects class="glass card card--media hero-feature reveal" style="--delay: 240ms" aria-labelledby="hero-feature-title">
-                        <img class="card__media hero-feature__thumb" src="assets/images/pigi-preview.jpeg" width="1280" height="800"
-                            alt="Pigi landing page: 'One config for every AI tool' with a terminal syncing configs to Claude Code, Cursor, Copilot, Continue and Windsurf">
+                        <img class="card__media hero-feature__thumb" src="assets/images/vhostctl-preview.jpeg" width="1280" height="800"
+                            alt="Terminal running vhostctl add with --dry-run, previewing the Apache VirtualHost block and hosts file entry it would write">
                         <div class="card__body">
-                            <p class="kicker">Featured · Live Product</p>
-                            <h2 id="hero-feature-title" class="hero-feature__title">Pigi: One config for every AI tool</h2>
+                            <p class="kicker">Featured · On npm</p>
+                            <h2 id="hero-feature-title" class="hero-feature__title">vhostctl: local virtual hosts in one command</h2>
                             <ul class="tags" aria-label="Stack">
-                                <li>Laravel</li><li>Vue</li><li>MCP</li><li>CLI</li>
+                                <li>CLI</li><li>Node.js</li><li>TypeScript</li>
                             </ul>
-                            <a href="#pigi" class="btn btn--primary btn--block">View Details</a>
+                            <a href="#vhostctl" class="btn btn--primary btn--block">View Details</a>
                         </div>
                     </article>
                 </div>
@@ -252,7 +252,7 @@
                     <p class="eyebrow">Projects</p>
                     <h2 id="projects-title">Selected Work</h2>
                     <p class="section-head__intro">
-                        Real systems I've built: one live product and client platforms ranging from APIs to SaaS.
+                        Real systems I've built: live products and the developer tools I use every day.
                     </p>
                 </header>
 
@@ -261,38 +261,34 @@
                     <button type="button" class="btn btn--ghost btn--sm" id="clearFilters">Clear filters</button>
                 </div>
 
-                <!-- Featured: Pigi -->
-                <article id="pigi" class="glass card card--media project-featured reveal" aria-labelledby="pigi-title">
-                    <img class="card__media project-featured__img" src="assets/images/pigi-preview.jpeg" width="1280" height="800"
-                        loading="lazy"
-                        alt="Pigi landing page: 'One config for every AI tool' with a terminal syncing configs to Claude Code, Cursor, Copilot, Continue and Windsurf">
+                <!-- Featured (pinned): vhostctl -->
+                <article id="vhostctl" class="glass card card--media project-featured reveal" aria-labelledby="vhostctl-title">
+                    <img class="card__media project-featured__img" src="assets/images/vhostctl-preview.jpeg" width="1280" height="800" loading="lazy"
+                        alt="Terminal running vhostctl add with --dry-run, previewing the Apache VirtualHost block and hosts file entry it would write">
                     <div class="card__body project-featured__body">
-                        <p class="project-meta">
-                            <span class="badge badge--live">Live Product</span>
-                            <span>pigi.dev</span>
-                        </p>
-                        <h3 id="pigi-title">Pigi: One config for every AI tool</h3>
-                        <p>
-                            A multi-tenant SaaS for dev teams to centrally manage and sync AI tool configurations (MCP
-                            servers, CLAUDE.md, agent prompts) across every developer machine. Ships with a companion
-                            CLI and an Electron desktop app for local sync.
-                        </p>
-                        <ul class="points">
-                            <li>Composable config model: stores components, not final files. A ConfigAssembler service builds each tool's config on sync, so a shared profile change reaches every linked project</li>
-                            <li>Full Stripe billing lifecycle with webhook-driven subscription sync and per-plan limits enforced in middleware</li>
-                            <li>Per-org database isolation via stancl/tenancy</li>
-                            <li>Async AI content generation via the Anthropic API, plus a claim → execute → advance phase workflow for concurrent team work</li>
-                        </ul>
-                        <ul class="tags" aria-label="Stack">
-                            <li>Laravel</li><li>Vue</li><li>Stripe</li><li>CLI</li>
-                        </ul>
-                        <a href="https://pigi.dev" target="_blank" rel="noreferrer" class="btn btn--primary btn--block btn--external">
-                            Visit pigi.dev<span class="sr-only"> (opens in a new tab)</span>
-                        </a>
+                            <p class="project-meta">
+                                <span class="badge badge--live">On npm</span>
+                                <span>@superdevs/vhostctl</span>
+                            </p>
+                            <h3 id="vhostctl-title">vhostctl: local virtual hosts in one command</h3>
+                            <p>
+                                A cross-platform CLI that sets up a local site end to end (server config block plus hosts entry)
+                                and removes it just as cleanly. No more hand-editing httpd-vhosts.conf or nginx blocks.
+                            </p>
+                            <ul class="points">
+                                <li>Detects XAMPP, WAMP, Apache and Nginx on Windows, macOS and Linux</li>
+                                <li>Subdomains, enable/disable, and <code>--dry-run</code> to preview every change before writing</li>
+                                <li>JSON deploy manifests: <code>vhostctl apply</code> creates or updates hosts non-interactively</li>
+                            </ul>
+                            <ul class="tags" aria-label="Stack">
+                                <li>CLI</li><li>Node.js</li><li>TypeScript</li>
+                            </ul>
+                            <a href="https://www.npmjs.com/package/@superdevs/vhostctl" target="_blank" rel="noreferrer" class="btn btn--primary btn--block btn--external">
+                                View on npm<span class="sr-only"> (opens in a new tab)</span>
+                            </a>
                     </div>
                 </article>
 
-                <!-- Client work (names as listed on the public CV) -->
                 <div class="project-grid">
                     <article class="glass card card--media project-card reveal" style="--delay: 0ms">
                         <img class="card__media project-thumb" src="assets/images/cavault-preview.jpeg" width="1280" height="800" loading="lazy"
@@ -318,98 +314,34 @@
                     </article>
 
                     <article class="glass card card--media project-card reveal" style="--delay: 100ms">
-                        <div class="card__media project-thumb project-thumb--api" aria-hidden="true"></div>
+                        <img class="card__media project-thumb" src="assets/images/postbox-preview.jpeg" width="1280" height="800" loading="lazy"
+                            alt="postbox web UI: an inbox of captured test emails with one message open in an HTML preview">
                         <div class="card__body">
                             <p class="project-meta">
-                                <span class="badge">Platform + API</span>
-                                <span>Client project</span>
+                                <span class="badge">CLI + Web UI</span>
+                                <span>In development</span>
                             </p>
-                            <h3>Fruchthof: B2B agricultural operations platform</h3>
+                            <h3>postbox: local mail catcher for developers</h3>
                             <p>
-                                An Inertia web admin plus a versioned REST API serving a third-party mobile app with OTP auth, cart, wishlist and order tracking.
+                                Catches every email your app sends during development and shows it in a live web inbox, so
+                                nothing reaches a real mailbox. One command to start.
                             </p>
                             <ul class="points">
-                                <li>Sanctum-authenticated <code>/api/v1/</code> for the mobile client</li>
-                                <li>Two-way contact and invoice sync with LexOffice (Lexware)</li>
-                                <li>FCM push notifications for order updates and Google Maps delivery routing</li>
+                                <li>SMTP catcher with live updates over WebSockets and HTML, text, raw and header views</li>
+                                <li>Inbound mail simulator for testing apps that receive email</li>
+                                <li>Postmark API emulation and an optional local IMAP mailbox</li>
                             </ul>
                             <ul class="tags" aria-label="Stack">
-                                <li>Laravel</li><li>Inertia</li><li>REST APIs</li><li>Firebase</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="glass card card--media project-card reveal" style="--delay: 200ms">
-                        <div class="card__media project-thumb project-thumb--internal" aria-hidden="true"></div>
-                        <div class="card__body">
-                            <p class="project-meta">
-                                <span class="badge">AI Platform</span>
-                                <span>Client project</span>
-                            </p>
-                            <h3>PCT (LetzTalk): AI-powered corporate training</h3>
-                            <p>
-                                Trainers author versioned scenarios with their own instructions, files and speech settings; students practise with an OpenAI assistant in real time.
-                            </p>
-                            <ul class="points">
-                                <li>Versioned prompt management, so live scenarios update without breaking existing student threads</li>
-                                <li>Audio pipeline merging student recordings into one per-session file with FFmpeg</li>
-                                <li>Trainer view with full chat replay, correction notes and grading</li>
-                            </ul>
-                            <ul class="tags" aria-label="Stack">
-                                <li>Laravel</li><li>Vue</li><li>OpenAI</li><li>FFmpeg</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="glass card card--media project-card reveal" style="--delay: 0ms">
-                        <div class="card__media project-thumb project-thumb--saas" aria-hidden="true"></div>
-                        <div class="card__body">
-                            <p class="project-meta">
-                                <span class="badge">Enterprise LMS</span>
-                                <span>Client project</span>
-                            </p>
-                            <h3>Mission Safety: multi-role safety training LMS</h3>
-                            <p>
-                                Admin, company, employee and trainer roles, with sequenced video and PDF courses, a full exam engine and automatic pass/fail scoring.
-                            </p>
-                            <ul class="points">
-                                <li>Certificate pipeline with QR codes, signature capture, TCPDF rendering and bulk ZIP export</li>
-                                <li>Stripe billing synced to SevDesk accounting</li>
-                                <li>Firebase FCM push notifications</li>
-                            </ul>
-                            <ul class="tags" aria-label="Stack">
-                                <li>Laravel</li><li>Vue</li><li>Stripe</li><li>Firebase</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="glass card card--media project-card reveal" style="--delay: 100ms">
-                        <div class="card__media project-thumb project-thumb--api" aria-hidden="true"></div>
-                        <div class="card__body">
-                            <p class="project-meta">
-                                <span class="badge">Optimisation</span>
-                                <span>Client project</span>
-                            </p>
-                            <h3>FCN Seating: VIP lounge planner for FC Nürnberg</h3>
-                            <p>
-                                Admins assign corporate guests with booked seat credits across multiple lounges and tables on matchdays.
-                            </p>
-                            <ul class="points">
-                                <li>Constraint-programming seating solver in Python (Google OR-Tools), run from Laravel queue jobs</li>
-                                <li>Models seating as a CSP, diagnoses infeasible plans and posts results back via API</li>
-                                <li>Per-company credit ledger, ag-Grid attendee tables and CSV export</li>
-                            </ul>
-                            <ul class="tags" aria-label="Stack">
-                                <li>Laravel</li><li>Python</li><li>OR-Tools</li><li>Queues</li>
+                                <li>CLI</li><li>Node.js</li><li>TypeScript</li><li>Vue</li>
                             </ul>
                         </div>
                     </article>
 
                     <!-- Not an <article>, so the stack filter/search doesn't count it as a project -->
-                    <div class="glass card project-more reveal" style="--delay: 200ms">
+                    <div class="glass card project-more reveal" style="--delay: 0ms">
                         <p class="eyebrow">And many more…</p>
                         <h3>APIs, dashboards, integrations and internal tools</h3>
-                        <p>Plenty of client work can't be shown publicly. Happy to walk you through what I built and how.</p>
+                        <p>More of my work is in my CV, and I'm happy to walk you through how it was built.</p>
                         <a href="#contact" class="btn btn--primary btn--block">Ask about my work</a>
                         <a href="assets/docs/Rayyan_Panja_CV.pdf" download class="btn btn--ghost btn--block">Download CV</a>
                     </div>

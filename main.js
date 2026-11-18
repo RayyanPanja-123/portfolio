@@ -84,7 +84,7 @@ const sectionValue = $('#sectionValue');
 
 function updateSpy() {
     const mid = innerHeight * 0.45;
-    // Innermost target crossing the middle of the screen (e.g. #pigi inside #projects)
+    // Innermost target crossing the middle of the screen (e.g. #vhostctl inside #projects)
     const current = spyTargets
         .filter(el => {
             const r = el.getBoundingClientRect();
@@ -178,7 +178,7 @@ function clearFilters() {
 
 $('#clearFilters').addEventListener('click', clearFilters);
 
-// A link to a card the filter is hiding (e.g. "View Details" → #pigi) clears the filter first
+// A link to a card the filter is hiding (e.g. "View Details" → #vhostctl) clears the filter first
 document.addEventListener('click', e => {
     const link = e.target.closest('a[href^="#"]');
     const target = link && link.hash && $(link.hash);
